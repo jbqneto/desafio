@@ -40,3 +40,16 @@ Se você for aprovado nesta etapa, será convidado para uma entrevista final com
       2. Desenvolva. Você terá 2 (dois) dias a partir da data do envio do desafio; 
       3. Após concluir seu trabalho faça um push; 
       4. Solicite o Merge request para o repositório original e que a força esteja com você.
+
+### Serviços REST:
+1. GET '/cliente/get' - Lista todos os clientes.
+2. GET '/cliente/get/{id}' - Pega o cliente do ID passado.
+3. POST '/cliente/add' - Adiciona um novo cliente. Requer o objecto 'cliente'.
+4. PUT '/cliente/edit' - Edita o cliente. Requer o objecto 'cliente', com o id a ser editado.
+5. DELETE '/cliente/delete/{id}' - Deleta o cliente do ID passado.
+	  
+### Instruções para abrir a página
+1. Necessário ter o Node e NPM instalado, pois o front-end está em angular;
+2. Na linha de comando acesse a pasta 'web/' dentro do projeto e rode 'npm install' para instalar as dependecias do angular;
+3. Após as instalações de pacotes execute 'ng serve --open' para executar e abrir o projeto.
+4. É possível fazer testes dos comandos por ferramentas de acesso a API ou REST, como plugins do chrome ou firefox.
