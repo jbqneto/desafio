@@ -17,15 +17,15 @@ import br.com.jbqneto.desafio.repository.IClienteRepository;
 import br.com.jbqneto.desafio.util.JsonUtil;
 import br.com.jbqneto.desafio.util.ProjectException;
 
-@CrossOrigin
 @RestController
+@CrossOrigin(origins = {"http://localhost:4200"},
+maxAge = 4800, allowCredentials = "true") 
 @RequestMapping("/cliente")
 public class ClienteController {
 
 	@Autowired
 	private IClienteRepository clienteRepository;
 	
-	@CrossOrigin
 	@RequestMapping(value="/edit", method=RequestMethod.PUT, consumes=MediaType.APPLICATION_JSON_UTF8_VALUE, produces=MediaType.APPLICATION_JSON_UTF8_VALUE)
 	public @ResponseBody JsonUtil edit(@RequestBody ClienteModel cliente) {	
 		try {
@@ -47,7 +47,6 @@ public class ClienteController {
 		}		
 	}
 	
-	@CrossOrigin
 	@RequestMapping(value="/add", method=RequestMethod.POST, consumes=MediaType.APPLICATION_JSON_UTF8_VALUE, produces=MediaType.APPLICATION_JSON_UTF8_VALUE)
 	public @ResponseBody JsonUtil add(@RequestBody ClienteModel cliente) {		
 		try {
@@ -71,7 +70,6 @@ public class ClienteController {
 		}
 	}
 	
-	@CrossOrigin(origins  = "http://localhost:4200")
 	@RequestMapping(value="/delete/{id}", method = RequestMethod.DELETE, produces=MediaType.APPLICATION_JSON_UTF8_VALUE)
 	public @ResponseBody JsonUtil delete(@PathVariable Integer id){ 
 		try {
